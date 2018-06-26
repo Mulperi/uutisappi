@@ -1,3 +1,11 @@
 <div class="article-container">
-  <div *ngFor="let article of (articles | async)" class="article">{{ article }}</div>
+  <div *ngFor="let article of (articles | async)" class="article">
+    <a [href]="article.link">
+      <h3>{{ article.title }}</h3>
+    </a>
+    <div class="article__source">
+      <p>{{ article.timestamp }}</p>
+      <p>{{ article.source }}</p>
+    </div>
+  </div>
 </div>

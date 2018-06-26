@@ -10,12 +10,11 @@ app.use(cors());
 const publicPath = path.join(__dirname, '..', 'public');
 app.use(express.static(publicPath));
 
-app.get('/', (req, res) => res.sendFile(path.join(publicPath, 'index.html')));
-
 app.get('/news', (req, res) => {
   let articles = [];
   newsService.getNews().subscribe(
     article => {
+      // console.log(article);
       articles.push(article);
     },
     error => {
@@ -24,6 +23,8 @@ app.get('/news', (req, res) => {
     () => res.json(articles)
   );
 });
+
+app.get('*', (req, res) => res.sendFile(path.join(publicPath, 'index.html')));
 
 const port = process.env.PORT || 3000;
 app.listen(port, () => console.log(`server listening port ${port}`));

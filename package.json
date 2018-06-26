@@ -16,10 +16,8 @@
     "@types/request-promise": "^4.1.41",
     "cheerio": "^1.0.0-rc.2",
     "cors": "^2.8.4",
-    "crawler": "^1.1.4",
     "express": "^4.16.3",
     "nodemon": "^1.17.5",
-    "osmosis": "^1.1.7",
     "request-promise": "^4.2.2",
     "rxjs": "^6.2.1"
   },
