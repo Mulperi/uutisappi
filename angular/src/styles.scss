@@ -1,10 +1,31 @@
 /* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css?family=Arvo|Roboto');
+
+// Colors
+$background: #fcfcfc;
 
 html,
 body {
+  background: $background;
   height: 100%;
 }
 
 body {
+  color: grey;
+  font-family: 'Arvo', serif;
   margin: 0;
+  padding: 1em;
+}
+
+a {
+  color: grey;
+  text-decoration: none;
+}
+
+.article {
+  background: darken($background, 2%);
+  border-radius: 4px;
+  color: grey;
+  margin: 1em 0;
+  padding: 1em;
 }
