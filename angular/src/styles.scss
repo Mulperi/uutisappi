@@ -3,6 +3,7 @@
 
 // Colors
 $background: #fcfcfc;
+$text-headline: #808080;
 
 html,
 body {
@@ -11,21 +12,24 @@ body {
 }
 
 body {
-  color: grey;
+  color: $text-headline;
   font-family: 'Arvo', serif;
   margin: 0;
   padding: 1em;
 }
 
 a {
-  color: grey;
+  color: $text-headline;
   text-decoration: none;
 }
 
 .article {
-  background: darken($background, 2%);
+  background: darken($background, 4%);
   border-radius: 4px;
-  color: grey;
   margin: 1em 0;
   padding: 1em;
+}
+
+.article__date-source {
+  color: lighten($text-headline, 30%);
 }
