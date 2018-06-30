@@ -23,7 +23,7 @@ export const metaReducers: MetaReducer<any>[] = !environment.production
   imports: [
     BrowserModule,
     HttpClientModule,
-    ServiceWorkerModule.register('./ngsw-worker.js', {
+    ServiceWorkerModule.register('ngsw-worker.js', {
       enabled: environment.production
     }),
     StoreModule.forRoot(reducers, { metaReducers }),
