@@ -1,5 +1,11 @@
 <app-header></app-header>
 <div class="articles-container">
+  <div *ngIf="loadingArticles$ | async" class="article">
+    <h3>Ladataan uutisia...</h3>
+  </div>
+  <div *ngIf="weather" class="article">
+    <h3>{{ weather.temp | number:'2.0-0'}} &#8451; {{ weather.summary }}</h3>
+  </div>
   <div *ngFor="let article of (articles$ | async)" class="article">
     <a [href]="article.link">
       <h3>{{ article.title }}</h3>

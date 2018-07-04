@@ -1,4 +1,5 @@
 export const environment = {
   production: true,
-  newsAPI: '/news/'
+  newsAPI: '/news',
+  weatherAPI: '/weather'
 };

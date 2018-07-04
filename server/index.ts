@@ -2,7 +2,9 @@ import * as express from 'express';
 import * as path from 'path';
 import * as cors from 'cors';
 import NewsService from './services/news.service';
+import WeatherService from './services/weather.service';
 const newsService = new NewsService();
+const weatherService = new WeatherService();
 const app = express();
 
 app.use(cors());
@@ -22,6 +24,21 @@ app.get('/news', (req, res) => {
     },
     () => res.json(articles)
   );
+});
+
+app.get('/weather/:latitude/:longitude', (req, res) => {
+  weatherService
+    .getWeather(req.params.latitude, req.params.longitude)
+    .subscribe(
+      weather => {
+        res.send(weather);
+      },
+      error => {
+        console.log('virhe');
+        console.log(error.message);
+      }
+      // () => res.json('done')
+    );
 });
 
 app.get('*', (req, res) => res.sendFile(path.join(publicPath, 'index.html')));

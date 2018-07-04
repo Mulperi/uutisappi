@@ -13,6 +13,7 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { storeFreeze } from 'ngrx-store-freeze';
 import { AppComponent } from './containers/app.component';
 import { components } from './components';
+import { WeatherService } from './services/weather.service';
 
 export const metaReducers: MetaReducer<any>[] = !environment.production
   ? [storeFreeze]
@@ -30,7 +31,7 @@ export const metaReducers: MetaReducer<any>[] = !environment.production
     EffectsModule.forRoot(effects),
     !environment.production ? StoreDevtoolsModule.instrument() : []
   ],
-  providers: [NewsService],
+  providers: [NewsService, WeatherService],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
