@@ -3,13 +3,13 @@ import * as fromWeather from '../actions/weather.actions';
 export interface WeatherState {
   loading: boolean;
   loaded: boolean;
-  weather: any[];
+  weather: { summary: string; temp: string };
 }
 
 export const initialState: WeatherState = {
   loading: false,
   loaded: false,
-  weather: []
+  weather: { summary: '', temp: '' }
 };
 
 export function reducer(
@@ -30,7 +30,7 @@ export function reducer(
         ...state,
         loading: false,
         loaded: true,
-        weather: action.payload
+        weather: action.payload.currently.summary
       };
     }
     default:

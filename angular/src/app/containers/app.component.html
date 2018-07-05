@@ -3,8 +3,8 @@
   <div *ngIf="loadingArticles$ | async" class="article">
     <h3>Ladataan uutisia...</h3>
   </div>
-  <div *ngIf="weather" class="article">
-    <h3>{{ weather.temp | number:'2.0-0'}} &#8451; {{ weather.summary }}</h3>
+  <div *ngIf="(weather$ | async).temp" class="article">
+    <h3>{{ (weather$ | async).temp | number:'2.0-0'}} &#8451; {{ (weather$ | async).summary }}</h3>
   </div>
   <div *ngFor="let article of (articles$ | async)" class="article">
     <a [href]="article.link">

@@ -27,7 +27,9 @@ export class AppComponent implements OnInit {
 
   ngOnInit(): void {
     this.articles$ = this.store.select(fromNews.getNews);
-    this.weather$ = this.store.select(fromWeather.getWeather);
+    this.store.select(fromWeather.getWeather).subscribe(data => {
+      console.log(data);
+    });
     this.loadingArticles$ = this.store.select(fromNews.getLoading);
     this.store.dispatch(new newsActions.NewsLoad());
     this.getLocation();
