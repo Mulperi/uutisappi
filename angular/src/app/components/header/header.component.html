@@ -1,2 +1,9 @@
-<h1>uutisäppi</h1>
-<h6>alpha</h6>
+<header>
+    <div class="header-container">
+        <h1>uutisäppi
+            <span class="alpha">alpha</span>
+        </h1>
+        <h3 class="weather" *ngIf="weatherLoading">Ladataan säätä...</h3>
+        <h3 class="weather" *ngIf="weather.temp">{{ weather.temp | number:'2.0-0' }} &#8451; {{ weather.summary }}</h3>
+    </div>
+</header>

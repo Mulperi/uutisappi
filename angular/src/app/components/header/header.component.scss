@@ -1,8 +1,38 @@
-h1 {
-  text-align: center;
+@import '../../../style-variables';
+
+header {
+  background: lighten($midnight-blue, 5%);
+  display: flex;
+  justify-content: center;
 }
+
+.header-container {
+  border: 0px solid red;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+@media screen and (min-width: (490px)) {
+  .header-container {
+    flex-direction: row;
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
 h6 {
+  margin: 1em;
+}
+.alpha {
   color: hotpink;
-  margin-top: -2em;
-  text-align: center;
+}
+
+.weather {
 }
