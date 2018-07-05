@@ -18,6 +18,7 @@ import { WeatherService } from '../services/weather.service';
 export class AppComponent implements OnInit {
   articles$: Observable<any>;
   loadingArticles$: Observable<any>;
+  loadingWeather$: Observable<any>;
   weather$: Observable<any>;
 
   constructor(
@@ -27,10 +28,9 @@ export class AppComponent implements OnInit {
 
   ngOnInit(): void {
     this.articles$ = this.store.select(fromNews.getNews);
-    this.store.select(fromWeather.getWeather).subscribe(data => {
-      console.log(data);
-    });
+    this.weather$ = this.store.select(fromWeather.getWeather);
     this.loadingArticles$ = this.store.select(fromNews.getLoading);
+    this.loadingWeather$ = this.store.select(fromWeather.getLoading);
     this.store.dispatch(new newsActions.NewsLoad());
     this.getLocation();
   }
@@ -38,17 +38,8 @@ export class AppComponent implements OnInit {
   getLocation(): void {
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition((position: Position) => {
-        console.log(position.coords);
+        // console.log(position.coords);
         this.store.dispatch(new weatherActions.WeatherLoad(position.coords));
-        // this.store.select(fromWeather.getWeather).subscribe(
-        //   (data: any) => {
-        //     this.weather = {
-        //       summary: data.currently.summary,
-        //       temp: ((data.currently.temperature - 32) * 5) / 9
-        //     };
-        //   },
-        //   error => console.log(error)
-        // );
       });
     } else {
       console.log('location not allowed');

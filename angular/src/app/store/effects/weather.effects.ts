@@ -14,12 +14,10 @@ export class WeatherEffects {
   @Effect()
   WeatherLoad$ = this.actions$.ofType(weatherActions.WEATHER_LOAD).pipe(
     concatMap((action: weatherActions.WeatherLoad) => {
-      console.log('weather load');
-      console.log(action.payload);
       return this.weatherService.getWeather(action.payload);
     }),
     map(weather => {
-      console.log(weather);
+      // console.log(weather);
       return new weatherActions.WeatherLoadSuccess(weather);
     })
     // catchError((error: any) => {

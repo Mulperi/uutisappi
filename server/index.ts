@@ -31,7 +31,10 @@ app.get('/weather/:latitude/:longitude', (req, res) => {
     .getWeather(req.params.latitude, req.params.longitude)
     .subscribe(
       weather => {
-        res.send(weather);
+        res.send({
+          temp: ((weather.currently.temperature - 32) * 5) / 9,
+          summary: weather.currently.summary
+        });
       },
       error => {
         console.log('virhe');

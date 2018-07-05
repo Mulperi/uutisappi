@@ -1,25 +1,29 @@
 /* You can add global styles to this file, and also import other style files */
 @import url('https://fonts.googleapis.com/css?family=Arvo|Roboto');
 
-// Colors
+// Colors 2
 $background: #fcfcfc;
 $text-headline: #808080;
 
+// Colors 2
+$midnight-blue: #294052;
+$morning-glory: #8FBCDB;
+
 html,
 body {
-  background: $background;
+  background: $midnight-blue;
   height: 100%;
 }
 
 body {
-  color: $text-headline;
+  color: $morning-glory;
   font-family: 'Arvo', serif;
   margin: 0;
   padding: 1em;
 }
 
 a {
-  color: $text-headline;
+  color: $morning-glory;
   text-decoration: none;
 }
 
@@ -31,7 +35,7 @@ a {
 }
 
 .article {
-  background: darken($background, 4%);
+  background: lighten($midnight-blue, 4%);
   border-radius: 4px;
   margin: 1em;
   max-width: 480px;
@@ -39,5 +43,5 @@ a {
 }
 
 .article__date-source {
-  color: lighten($text-headline, 30%);
+  color: lighten($midnight-blue, 20%);
 }

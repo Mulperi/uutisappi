@@ -30,7 +30,7 @@ export function reducer(
         ...state,
         loading: false,
         loaded: true,
-        weather: action.payload.currently.summary
+        weather: action.payload
       };
     }
     default:
