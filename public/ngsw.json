@@ -12,7 +12,7 @@
         "/main.6612a99b6efbe7ceaaf5.js",
         "/polyfills.2f4a59095805af02bd79.js",
         "/runtime.a66f828dca56eeb90e02.js",
-        "/styles.4cc4750f548de8c6e6ef.css"
+        "/styles.bb72b3be73e04c8af41a.css"
       ],
       "patterns": []
     },
@@ -44,11 +44,11 @@
     "/assets/icons/icon-72x72.png": "c457e56089a36952cd67156f9996bc4ce54a5ed9",
     "/assets/icons/icon-96x96.png": "3914125a4b445bf111c5627875fc190f560daa41",
     "/favicon.ico": "40ea56019bd834a497051001b4c16176666d3e88",
-    "/index.html": "8716539f039b1c16f6045f6effeba5a882d44553",
+    "/index.html": "d1d530becb0b6f466c23a578eb5841e944cde9fc",
     "/main.6612a99b6efbe7ceaaf5.js": "7da1b0aeadb39cd6a769d1dc305814de73071afa",
     "/polyfills.2f4a59095805af02bd79.js": "8949bb1b1e302dda246f6ed9c2da703270360b1f",
     "/runtime.a66f828dca56eeb90e02.js": "078e320cc6fdaf355836c3b1c52b059cdd33fc7e",
-    "/styles.4cc4750f548de8c6e6ef.css": "f1e463694112686c7e3b908a6d7b42995020b17d"
+    "/styles.bb72b3be73e04c8af41a.css": "fa61c4953ef02fd1e61efbd9881fc4d1fad88cb0"
   },
   "navigationUrls": [
     {
