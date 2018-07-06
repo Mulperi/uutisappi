@@ -14,7 +14,7 @@ app.use(cors());
 const publicPath = path.join(__dirname, '..', 'public');
 app.use(express.static(publicPath));
 
-app.get('/news', (req, res) => {
+app.get('/api/news', (req, res) => {
   let articles = [];
   newsService.getNews().subscribe(
     article => {
@@ -28,7 +28,7 @@ app.get('/news', (req, res) => {
   );
 });
 
-app.get('/movies', (req, res) => {
+app.get('/api/movies', (req, res) => {
   let articles = [];
   movieService.getMovies().subscribe(
     article => {
@@ -42,7 +42,7 @@ app.get('/movies', (req, res) => {
   );
 });
 
-app.get('/weather/:latitude/:longitude', (req, res) => {
+app.get('/api/weather/:latitude/:longitude', (req, res) => {
   weatherService
     .getWeather(req.params.latitude, req.params.longitude)
     .subscribe(

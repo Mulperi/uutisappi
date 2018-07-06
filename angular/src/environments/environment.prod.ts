@@ -1,6 +1,6 @@
 export const environment = {
   production: true,
-  newsAPI: '/news',
-  weatherAPI: '/weather',
-  moviesAPI: '/movies'
+  newsAPI: '/api/news',
+  weatherAPI: '/api/weather',
+  moviesAPI: '/api/movies'
 };
