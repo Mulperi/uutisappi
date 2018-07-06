@@ -1,15 +1,2 @@
 <app-header [weather]="(weather$ | async)" [weatherLoading]="(loadingWeather$ | async)"></app-header>
-<div class="articles-container">
-  <div *ngIf="loadingArticles$ | async" class="article">
-    <h3>Ladataan uutisia...</h3>
-  </div>
-  <div *ngFor="let article of (articles$ | async)" class="article">
-    <a [href]="article.link">
-      <h3>{{ article.title }}</h3>
-    </a>
-    <div class="article__date-source">
-      <p>{{ article.timestamp }}</p>
-      <p>{{ article.source }}</p>
-    </div>
-  </div>
-</div>
+<router-outlet></router-outlet>

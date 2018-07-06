@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "nodemon",
+    "start-ng": "cd angular && npm start",
     "build": "cd angular && ng build --prod --build-optimizer && cd ..",
     "test": "echo \"Error: no test specified\" && exit 1"
   },

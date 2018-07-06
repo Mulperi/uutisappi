@@ -1,14 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
 
 import { Store } from '@ngrx/store';
 import * as fromStore from '../store';
-import * as fromNews from '../store/selectors/news.selectors';
+
 import * as fromWeather from '../store/selectors/weather.selectors';
-import * as newsActions from '../store/actions/news.actions';
+
 import * as weatherActions from '../store/actions/weather.actions';
-import { WeatherService } from '../services/weather.service';
+import * as moviesActions from '../store/actions/movies.actions';
+import * as newsActions from '../store/actions/news.actions';
 
 @Component({
   selector: 'app-root',
@@ -16,23 +16,18 @@ import { WeatherService } from '../services/weather.service';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
-  articles$: Observable<any>;
-  loadingArticles$: Observable<any>;
   loadingWeather$: Observable<any>;
   weather$: Observable<any>;
 
-  constructor(
-    private weatherService: WeatherService,
-    private store: Store<fromStore.State>
-  ) {}
+  constructor(private store: Store<fromStore.State>) {}
 
   ngOnInit(): void {
-    this.articles$ = this.store.select(fromNews.getNews);
     this.weather$ = this.store.select(fromWeather.getWeather);
-    this.loadingArticles$ = this.store.select(fromNews.getLoading);
     this.loadingWeather$ = this.store.select(fromWeather.getLoading);
-    this.store.dispatch(new newsActions.NewsLoad());
     this.getLocation();
+
+    this.store.dispatch(new moviesActions.MoviesLoad());
+    this.store.dispatch(new newsActions.NewsLoad());
   }
 
   getLocation(): void {

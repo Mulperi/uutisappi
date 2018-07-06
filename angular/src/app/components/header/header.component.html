@@ -5,5 +5,14 @@
         </h1>
         <h3 class="weather" *ngIf="weatherLoading">Ladataan säätä...</h3>
         <h3 class="weather" *ngIf="weather.temp">{{ weather.temp | number:'2.0-0' }} &#8451; {{ weather.summary }}</h3>
+
     </div>
+    <nav class="menu">
+        <a routerLink="/news" routerLinkActive="active">
+            <h3>uutiset</h3>
+        </a>
+        <a routerLink="/movies" routerLinkActive="active">
+            <h3>elokuvat</h3>
+        </a>
+    </nav>
 </header>

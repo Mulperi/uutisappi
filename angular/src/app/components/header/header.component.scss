@@ -1,9 +1,19 @@
 @import '../../../style-variables';
 
+nav {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.active {
+  color: hotpink;
+  background: $midnight-blue;
+}
+
 header {
   background: lighten($midnight-blue, 5%);
-  display: flex;
-  justify-content: center;
 }
 
 .header-container {

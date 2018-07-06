@@ -3,8 +3,10 @@ import * as path from 'path';
 import * as cors from 'cors';
 import NewsService from './services/news.service';
 import WeatherService from './services/weather.service';
+import MovieService from './services/movie.service';
 const newsService = new NewsService();
 const weatherService = new WeatherService();
+const movieService = new MovieService();
 const app = express();
 
 app.use(cors());
@@ -15,6 +17,20 @@ app.use(express.static(publicPath));
 app.get('/news', (req, res) => {
   let articles = [];
   newsService.getNews().subscribe(
+    article => {
+      // console.log(article);
+      articles.push(article);
+    },
+    error => {
+      console.log(error);
+    },
+    () => res.json(articles)
+  );
+});
+
+app.get('/movies', (req, res) => {
+  let articles = [];
+  movieService.getMovies().subscribe(
     article => {
       // console.log(article);
       articles.push(article);

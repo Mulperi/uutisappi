@@ -1,0 +1,14 @@
+<div class="articles-container">
+    <div *ngIf="(loadingMovies$ | async)" class="article">
+        <h3>Ladataan elokuvia...</h3>
+    </div>
+    <div *ngFor="let movie of (movies$ | async)" class="article">
+        <a [href]="movie.link">
+            <h3>{{ movie.title }}</h3>
+        </a>
+        <div class="article__date-source">
+            <p>{{ movie.original_title }}</p>
+            <p>{{ movie.source }}</p>
+        </div>
+    </div>
+</div>

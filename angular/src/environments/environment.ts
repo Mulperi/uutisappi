@@ -5,7 +5,8 @@
 export const environment = {
   production: false,
   newsAPI: 'http://localhost:3000/news',
-  weatherAPI: 'http://localhost:3000/weather'
+  weatherAPI: 'http://localhost:3000/weather',
+  moviesAPI: 'http://localhost:3000/movies'
 };
 
 /*
