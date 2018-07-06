@@ -4,5 +4,4 @@ Simple news site crawler with node, express & angular. Demo: https://uutisappi.h
 
 _TODO_
 
-- ngrx/Store
 - More sources etc

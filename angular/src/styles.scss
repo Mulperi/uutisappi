@@ -3,6 +3,12 @@
 
 @import 'style-variables';
 
+.shell-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 html,
 body {
   background: $midnight-blue;
@@ -32,8 +38,14 @@ a {
   background: lighten($midnight-blue, 4%);
   border-radius: 4px;
   margin: 1em;
-  max-width: 480px;
   padding: 1em;
+  max-width: 800px;
+}
+
+@media screen and (min-width: (1200px)) {
+  .article {
+    max-width: 480px;
+  }
 }
 
 .article__date-source {
