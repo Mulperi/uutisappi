@@ -9,8 +9,9 @@ const weatherService = new WeatherService();
 const movieService = new MovieService();
 const app = express();
 
-app.use(cors());
+console.log(process.env.DARKSKY_APIKEY);
 
+app.use(cors());
 const publicPath = path.join(__dirname, '..', 'public');
 app.use(express.static(publicPath));
 
