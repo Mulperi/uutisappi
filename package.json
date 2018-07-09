@@ -4,9 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon",
-    "start-ng": "cd angular && npm start",
-    "build": "cd angular && ng build --prod --build-optimizer && cd ..",
+    "start": "node --require dotenv/config public-server/index.js",
+    "start-dev": "nodemon",
+    "start-ng": "cd dev-angular && npm start",
+    "ng-build": "cd dev-angular && ng build --prod --build-optimizer && cd ..",
+    "build": "rm -rf public-server && mkdir public-server && tsc",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
@@ -15,16 +17,17 @@
     "cheerio": "^1.0.0-rc.2",
     "cors": "^2.8.4",
     "express": "^4.16.3",
-    "nodemon": "^1.17.5",
     "request": "^2.87.0",
     "request-promise": "^4.2.2",
     "rxjs": "^6.2.1"
   },
   "devDependencies": {
+    "@types/cors": "^2.8.4",
     "@types/cheerio": "^0.22.7",
     "@types/express": "^4.16.0",
     "@types/node": "^10.3.4",
     "@types/request-promise": "^4.1.41",
+    "nodemon": "^1.17.5",
     "dotenv": "^6.0.0",
     "ts-node": "^6.1.2",
     "typescript": "^2.9.2"

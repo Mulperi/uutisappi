@@ -9,8 +9,6 @@ const weatherService = new WeatherService();
 const movieService = new MovieService();
 const app = express();
 
-console.log(process.env.DARKSKY_APIKEY);
-
 app.use(cors());
 const publicPath = path.join(__dirname, '..', 'public');
 app.use(express.static(publicPath));
@@ -54,7 +52,7 @@ app.get('/api/weather/:latitude/:longitude', (req, res) => {
         });
       },
       error => {
-        console.log('virhe');
+        console.log('Virhe säätietojen haussa.');
         console.log(error.message);
       }
       // () => res.json('done')

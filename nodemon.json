@@ -1,6 +1,6 @@
 {
   "watch": ["server"],
   "ext": "ts",
-  "ignore": ["server/**/*.spec.ts"],
-  "exec": "ts-node --require dotenv/config ./server/index.ts"
+  "ignore": ["dev-server/**/*.spec.ts"],
+  "exec": "ts-node --require dotenv/config ./dev-server/index.ts"
 }
